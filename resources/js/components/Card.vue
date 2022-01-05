@@ -1,8 +1,16 @@
 <template >
     <div class="card bg-white rounded-sm p-2 cursor-pointer text-sm hover:bg-gray-300 mb-2">
-        ceva
+        {{ card.title }}
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+        card: Object
+    }
+}
+</script>
 
 <style scoped>
     .card {
