@@ -8,7 +8,7 @@
 
         <Card :card="card" v-for="card in list.cards" :key="card.id"></Card>
 
-        <CardAddButton></CardAddButton>
+        <CardAddButton :list="list"></CardAddButton>
     </div>
 </template>
 
