@@ -73,8 +73,6 @@ class DatabaseSeeder extends Seeder
                         'owner_id' => $board->owner_id
                     ]));
                 });
-
-
             });
         });
     }
