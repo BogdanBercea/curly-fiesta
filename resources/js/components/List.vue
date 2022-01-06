@@ -6,10 +6,21 @@
             </div>
         </div>
 
-        <Card :card="card" v-for="card in list.cards" :key="card.id"></Card>
-        <CardEditor v-if="editing" @closed="editing = false" :list="list"></CardEditor>
-        <CardAddButton v-else @click="editing = true"></CardAddButton>
+        <Card 
+            v-for="card in list.cards" 
+            :key="card.id"
+            :card="card" 
+            @deleted="$emit('card-deleted', { ...$event, listId: list.id })"
+        ></Card>
 
+        <CardEditor 
+            v-if="editing"
+            @closed="editing = false" 
+            @added="$emit('card-added', { ...$event, listId: list.id })" 
+            :list="list"
+        ></CardEditor>
+
+        <CardAddButton v-else @click="editing = true"></CardAddButton>
     </div>
 </template>
 
