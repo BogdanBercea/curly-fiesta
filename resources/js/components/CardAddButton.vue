@@ -1,45 +1,7 @@
 <template>
     <div
-        @click="addCard" 
+        @click="$emit('click')" 
         class="rounded-sm p-2 text-gray-600 cursor-pointer hover:bg-gray-500 hover:text-gray-800 text-sm">
         Add new card
     </div>
 </template>
-
-<script>
-import CardAdd from './../graphql/CardAdd.gql'
-import BoardQuery from './../graphql/BoardWithListsAndCards.gql'
-
-export default {
-    props: {
-        list: Object
-    },
-
-    methods: {
-        addCard() {
-            this.$apollo.mutate({
-                mutation: CardAdd,
-
-                variables: {
-                    title: 'This is the mutation from frontend',
-                    listId: this.list.id,
-                    order: 1
-                },
-
-                update(store, {data: {cardAdd}}) {
-                    const data = store.readQuery({
-                        query: BoardQuery,
-                        variables: {
-                            id: this.list.board.id
-                        }
-                    });
-
-                    data.board.lists.find(list => list.id == this.list.id).cards.push(cardAdd);
-
-                    store.writeQuery({ query: BoardQuery, data });
-                } 
-            });
-        }
-    }
-}
-</script>

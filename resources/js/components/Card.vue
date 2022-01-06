@@ -1,5 +1,5 @@
 <template >
-    <div class="card bg-white rounded-sm p-2 cursor-pointer text-sm hover:bg-gray-300 mb-2">
+    <div class="shadow-card bg-white rounded-sm p-2 cursor-pointer text-sm hover:bg-gray-300 mb-2">
         {{ card.title }}
     </div>
 </template>
@@ -11,9 +11,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-    .card {
-        box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
-    }
-</style>
