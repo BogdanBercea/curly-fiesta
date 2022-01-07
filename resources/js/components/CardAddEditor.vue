@@ -1,6 +1,7 @@
 <template>
     <CardEditor 
         v-model="title"
+        label="Add Card"
         @closed="closed"
         @saved="addCard"
     ></CardEditor>
@@ -17,7 +18,7 @@ export default {
     components: { CardEditor },
 
     props: {
-        list: Object
+        list: Object,
     },
     
     data() {

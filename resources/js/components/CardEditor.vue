@@ -14,7 +14,7 @@
             <button 
                 @click="saved"
                 class="rounded-md py-1 px-3 bg-indigo-700 text-white cursor-pointer hover:bg-purple-600 outline-none"
-            >Add Card</button>
+            >{{ label }}</button>
             <button
                 @click="closed" 
                 class="py-1 px-3 ml-1 rounded-md hover:bg-gray-500 cursor-pointer text-gray-600"
@@ -26,7 +26,7 @@
 <script>
 export default {
 
-    props: [ "value" ],
+    props: [ "value", "label" ],
     
     data() {
         return { }
