@@ -7,7 +7,7 @@
 
             <div class="w-full sm:shadow-xl sm:bg-white sm:py-8 sm:px-12">
                 <div class="w-full text-center text-gray-600 font-bold mb-8">
-                    Log in to Laravello
+                    Sign up to your account
                 </div>
                 <form action="">
                     <div class="w-full mb-4">
@@ -15,6 +15,13 @@
                             type="text" 
                             class="rounded-md px-4 py-2 outline-none focus:outline-none border-gray-400 bg-gray-300 border-solid border-2 w-full text-sm"
                             placeholder="Enter email">
+                        
+                    </div>
+                    <div class="w-full mb-4">
+                        <input 
+                            type="text" 
+                            class="rounded-md px-4 py-2 outline-none focus:outline-none border-gray-400 bg-gray-300 border-solid border-2 w-full text-sm"
+                            placeholder="Enter full name">
                         
                     </div>
                     <div class="w-full mb-4">
@@ -28,16 +35,16 @@
                         <button 
                             type="submit"
                             class="rounded-md px-4 py-2 text-sm bg-green-500 font-bold outline-none focus:outline-none hover:bg-opacity-75 w-full text-white disabled:opacity-25"
-                        >Login</button>
+                        >Sign Up</button>
                     </div>
                 </form>
 
                 <div class="bg-gray-400 h-px w-full mb-6"></div>
                 <div class="text-center text-sm">
-                    <router-link
-                        to="/register"
+                    <router-link 
+                        to="/login"
                         class="text-blue-600 hover:underline"
-                    >Sign up for an account</router-link>
+                    >Already have an account? Log in</router-link>
                 </div>
             </div>
         </div>
